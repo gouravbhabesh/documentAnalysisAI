@@ -6,15 +6,7 @@ import com.gourav.docanalysis.model.Citation;
 import com.gourav.docanalysis.model.ContextSource;
 import com.gourav.docanalysis.model.IngestRequest;
 import com.gourav.docanalysis.model.RetrievalCandidate;
-import com.gourav.docanalysis.service.AtlasVectorSearchService;
-import com.gourav.docanalysis.service.CitationService;
-import com.gourav.docanalysis.service.ConversationService;
-import com.gourav.docanalysis.service.IngestionService;
-import com.gourav.docanalysis.service.OpenAiService;
-import com.gourav.docanalysis.service.PdfIngestionService;
-import com.gourav.docanalysis.service.VoyageAiService;
-import com.gourav.docanalysis.service.HybridRetrievalServiceSimpleWeighted;
-import com.gourav.docanalysis.service.VoyageRerankService;
+import com.gourav.docanalysis.service.*;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +26,8 @@ public class AnalysisController {
     private final OpenAiService openAiService;
     private final ConversationService conversationService;
     private final CitationService citationService;
-    private final HybridRetrievalServiceSimpleWeighted hybridRetrievalService;
+    private final HybridRetrievalServiceRRF hybridRetrievalService;
+    //private final HybridRetrievalServiceSimpleWeighted hybridRetrievalService;
     private final VoyageRerankService voyageRerankService;
 
     public AnalysisController(IngestionService ingestionService,
@@ -44,7 +37,7 @@ public class AnalysisController {
                               OpenAiService openAiService,
                               ConversationService conversationService,
                               CitationService citationService,
-                              HybridRetrievalServiceSimpleWeighted hybridRetrievalService,
+                              HybridRetrievalServiceRRF hybridRetrievalService,
                               VoyageRerankService voyageRerankService) {
         this.ingestionService = ingestionService;
         this.pdfIngestionService = pdfIngestionService;

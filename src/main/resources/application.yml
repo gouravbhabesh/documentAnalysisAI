@@ -9,7 +9,7 @@ spring:
 
 app:
   mongodb:
-    uri: mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/document_ai_demo?retryWrites=true&w=majority
+    uri: mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/document_ai_demo?retryWrites=true&w=majority&appName=devrel_java_documentAI_vectorsearch_foojay
     database: document_ai_demo
   voyage:
     api-key: ${VOYAGE_API_KEY}

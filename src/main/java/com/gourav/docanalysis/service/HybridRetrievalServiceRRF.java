@@ -28,14 +28,14 @@ Reciprocal Rank Fusion (RRF) formula:
 
 
 @Service
-public class HybridRetrievalService {
+public class HybridRetrievalServiceRRF {
 
     private final AtlasVectorSearchService atlasVectorSearchService;
     private final AtlasKeywordSearchService atlasKeywordSearchService;
 
     private final int rrfK;
 
-    public HybridRetrievalService(AtlasVectorSearchService atlasVectorSearchService,
+    public HybridRetrievalServiceRRF(AtlasVectorSearchService atlasVectorSearchService,
                                   AtlasKeywordSearchService atlasKeywordSearchService,
                                   @Value("${app.retrieval.rrf-k:60}") int rrfK) {
         this.atlasVectorSearchService = atlasVectorSearchService;
